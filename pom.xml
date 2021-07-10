@@ -14,7 +14,7 @@
     </parent>
     <groupId>mar.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>sfg-pet-clinic</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -46,6 +46,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <goals>install</goals>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
                     <checkModificationExcludes>
                         <checkModificationExclude>pom.xml</checkModificationExclude>
                     </checkModificationExcludes>
@@ -56,6 +57,6 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:mariuszsw/sfg-pet-clinic.git</developerConnection>
-      <tag>sfg-pet-clinic-0.0.1</tag>
+      <tag>sfg-pet-clinic-0.0.3</tag>
   </scm>
 </project>
