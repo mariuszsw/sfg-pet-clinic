@@ -1,8 +1,10 @@
 package mar.springframework.sfgpetclinic.bootstrap;
 
 import mar.springframework.sfgpetclinic.model.Owner;
+import mar.springframework.sfgpetclinic.model.PetType;
 import mar.springframework.sfgpetclinic.model.Vet;
 import mar.springframework.sfgpetclinic.services.OwnerService;
+import mar.springframework.sfgpetclinic.services.PetTypeService;
 import mar.springframework.sfgpetclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,19 +15,29 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
 //    public DataLoader() {
 //        ownerService = new OwnerServiceMap();
 //        vetService = new VetServiceMap();
 //    }
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType saveCatPetType = petTypeService.save(cat);
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType saveDogPetType = petTypeService.save(dog);
 
         Owner owner1 = new Owner();
 
