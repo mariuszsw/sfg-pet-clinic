@@ -3,6 +3,7 @@ package mar.springframework.sfgpetclinic.bootstrap;
 import mar.springframework.sfgpetclinic.model.*;
 import mar.springframework.sfgpetclinic.services.OwnerService;
 import mar.springframework.sfgpetclinic.services.PetTypeService;
+import mar.springframework.sfgpetclinic.services.SpecialtyService;
 import mar.springframework.sfgpetclinic.services.VetService;
 import mar.springframework.sfgpetclinic.services.map.SpecialityMapService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-    private final SpecialityMapService specialityService;
+    private final SpecialtyService specialityService;
 
 //    public DataLoader() {
 //        ownerService = new OwnerServiceMap();
@@ -106,7 +107,7 @@ public class DataLoader implements CommandLineRunner {
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
-        vet1.getSpecialities().add(savedSurgery);
+        vet2.getSpecialities().add(savedSurgery);
 
         vetService.save(vet2);
 
